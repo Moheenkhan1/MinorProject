@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+    <title>Arabian.com</title>
+</head>
+<body id="main-body">
+    <!--navbar-->
+
+<div class="nav">
+    <nav class="loc-bar">
+        <div class="location">
+            <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <span>Nearby location of local stores</span>
+        <button class="loc-btn">Set location</button>
+    </nav>
+    <div class="line"></div>
+    <nav class="nav-bar">
+        <div class="nav-div">
+            <div class="logo-img">
+                <div class="logo"><a href="#">Arabian</a></div>
+                <ul>
+                    <li><a href="/fullmenu">Menu</a></li>
+                    <li><a href="#footerrr">About Us</a></li>
+                </ul>
+            </div>
+           
+            <div class="user-cart">
+                <div class="dropdown">
+                    <i class="fas fa-user"></i>
+                    <div class="btn">
+                       <button class="signupA">Sign up</button>
+                       <button class="loginA">Log in</button>
+                    </div>
+                </div>
+                <div class="cart">
+                  <a href="/cart"><i class="fas fa-shopping-cart cart-icon"></i></a>
+                  <div class="cart-value">0</div>  
+                </div>
+            </div>
+        </div>
+    </nav>
+
+</div>
+
+    <nav class="order-bar">
+        <p class="order-par">Place Your Order</p> 
+    </nav>
+
+
+    <!-- login signup page -->
+     <!-- login -->
+     <div class="form-container">
+        <div class="login">
+            <i class="fa-solid fa-xmark cross"></i>
+            <form action="">
+                <h2 class="login-heading">LOGIN</h2>
+                <div class="phonediv">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <input type="number" name="phone-number" class="phone" placeholder="Enter Your Phone Number">
+                </div>
+                <div class="pass-div">
+                    <i class="fa-solid fa-key"></i>
+                    <input type="password" name="password" class="password" placeholder="Enter Password">
+                </div>
+                <div class="forgot">
+                    <div class="remember">
+                        <input type="checkbox" name="Remember-me" id="remember">
+                        <label for="checkbox">Remember-me</label>
+
+                    </div>
+                    <a href="">Forgot Password.?</a>
+
+                </div>
+                <button class="login-buttonn">Login Now</button>
+                <div class="dont-have-account">
+                    <p class="dont log-sign">Don't have an accounty.? SIGN-UP</p>
+
+                </div>
+            </form>
+        </div>
+     </div>
+
+     <!-- signup -->
+
+     <div class="form-container2">
+        <div class="signup-div">
+            <i class="fa-solid fa-xmark cross2"></i>
+            <form action="">
+                <h2 class="signup-heading">SIGN UP</h2>
+                <div class="phonediv">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <input type="number" name="phone-number" class="phone" placeholder="Enter Your Phone Number">
+                </div>
+                <div class="pass-div">
+                    <i class="fa-solid fa-key"></i>
+                    <input type="password" name="password" class="password" placeholder="Enter Password">
+                </div>
+                <div class="confirm-pass">
+                    <i class="fa-solid fa-key"></i>
+                    <input type="password" name="c-password" class="password" placeholder="Confirm Password">
+                </div>
+                
+                </div>
+                <button class="Signup-buttonn">SignUp Now</button>
+                <div class="already-have-account">
+                    <p class="alreadyyy log-sign">Already have an accounty.? LOGIN</p>
+
+                </div>
+            </form>
+        </div>
+     </div>
+
+    <!-- body -->
+
+    <div class="scrolling">
+    <img src="/pizzascrollimg.jpg" alt="" class="pizzascroll">
+    </div>
+
+    <h2 class="heading">BROWSE CATEGORIES</h2>
+    
+
+    <div class="categories">
+        <div class="list pizza"><a href="/fullmenu/#pizzass"><h2>PIZZA</h2></a></div>
+        <div class="list burger"><a href="/fullmenu/#burgers"><h2>BURGER</h2></a></div>
+        <div class="list sandwich"><a href="/fullmenu/#sandwiches"><h2>SANDWICH</h2></a></div>
+        <div class="list wraps"><a href="/fullmenu/#wrrapps"><h2>WRAPS</h2></a></div>
+    </div>
+
+    <div class="categories">
+        <div class="list rolls"><a href="/fullmenu/#rollss"><h2>ROLLS</h2></a></div>
+        <div class="list starters"><a href="/fullmenu/#startersss"><h2>STARTERS</h2></a></div>
+        <div class="list clubsandwich"><a href="/fullmenu/#drinkss"><h2>SHAKES</h2></a></div>
+        <div class="list fullmenu"> <a href="/fullmenu">ARABIAN MENU</a></div>
+    </div>
+
+
+    <!-- combo offer scroll menu -->
+<div class="background-scroll">
+    <div class="scroll-menu">
+      <img src="/back.png" id="backBtn">
+        <div class="scroll-items js-scroll-items" id="scrollItems">
+            <!-- items here are generated through js -->
+        </div>
+        <img src="/next.png" id="nextBtn">
+    
+</div>
+<div class="line2"></div>
+
+
+   <!--footer-->
+    <div class="footer" id="footerrr">
+        <div class="about-sec">
+           <div>
+            <a>Arabian India</a>
+            <a>About Arabian</a>
+            <a>Legal</a>
+            <a>Privacy Policy</a>
+           </div>
+           <div>
+            <a>Disclaimer</a>
+            <a>Arabian Food</a>
+            <a>Menu</a>
+            <a>Support</a>
+        </div>
+        <div>
+            <a>Arabian Feedback</a>
+            <a>Get Help</a>
+            <a>Privacy Policy</a>
+            <button><i class="fa-solid fa-phone"></i>Call Us 123-456-789</button>
+        </div>
+           
+        </div>
+        <div class="social-media-footer">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="footer-botton">
+            <p>Copyright &copy;2022; Designed by <span class="dev">Developer</span></p>
+        </div>
+
+    </div>
+
+
+    <script src="/data.js"></script>
+    <script src="/home.js"></script>
+</body>
+</html>
