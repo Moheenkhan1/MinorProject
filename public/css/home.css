@@ -497,64 +497,8 @@ li a {
     flex-direction: column;
     padding: 0.6rem;
     flex: none;
-    overflow-x:scroll;
+    overflow-x: scroll;
 }
-
-.square {
-    display: flex;
-    align-items: start;
-    justify-content: start;
-    flex-direction: column;
-    overflow: hidden;
-    width: 19rem;  /* Adjust as needed */
-    height: 24rem; /* Adjust as needed */
-    background-color: white; /* Example color, adjust as needed */
-    border-radius: 0.5rem; /* Optional for rounded corners */
-}
-.square-img{
-    margin: 0%;
-    height:60% ;
-    width: 100%;
-    background-color:#FF0000;
-}
-.square-img img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-.square-heading{
-    margin-top: 0.7rem;
-    margin-left: 1.7rem;
-    font-family: "Itim", cursive;
-    font-weight: 400;
-    font-style: normal;
-}
-.price-combo{
-    font-size: 1.5rem;
-    font-family: "Anton SC", sans-serif;
-   font-weight: 800;
-   font-style: normal;
-   margin-left: 6rem;
-   margin-top: 0.3rem;
-}
-.square-button{
-    background-color: #FF0000;
-    color: white;
-    height: 3rem;
-    width: 8rem;
-    border-radius: 2rem;
-    border: none;
-    margin-left: 5.2rem;
-    margin-top: 0.5rem;
-    font-weight: 700;
-}
-.square-button:hover{
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-    transition: 0.5s;
-}
-
 .scroll-items::-webkit-scrollbar{
     display: none;
 }
@@ -572,20 +516,21 @@ li a {
     cursor: pointer;
     margin: 2.5rem;
 }
-.quantityButtons{
-    height: 3rem;
-    width: 6rem;
+
+.quote1{
+    width: 68rem;
+    height: 20rem;
+    color: white;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-evenly;
-    margin-left: 5.2rem;
+    font-family: "Imperial Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem;
+    background: linear-gradient(rgba(255, 0, 0, 0.361), rgba(0, 0, 0, 0.572));
 }
-.downQ , .upQ{
-    padding: 0.5rem;
-    margin: 1rem;
-    background-color: #FF0000;
-    border-radius: 1rem;
-}
+
 /*FOOTER*/
 .footer{
     margin-top: auto;
