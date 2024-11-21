@@ -1,4 +1,5 @@
 let cartProductDiv = document.querySelector(".main-cart-box");
+let cartSummary = document.querySelector(".cart-summary");
 let updateIncrement=document.getElementById("updationKeyIncrement");
 let updateDecrement=document.getElementById("updationKeysDecrement");
 
@@ -12,15 +13,12 @@ let calculation = () => {
   
   calculation();
 
-  const totalItems = Object.values(completeItems);
-
   let generateCartItems = () => {
     if (basket.length !== 0) {
       return (cartProductDiv.innerHTML = basket
         .map((x) => {
-          for(i=0;i<totalItems.length;i++){
             let { id, item } = x;
-            let search = totalItems[i].find((x) => x.id === id) || [];
+            let search = fullMenuItems.find((x) => x.id === id) || [];
             let { name,price,image } = search;
 
             return `
@@ -28,10 +26,9 @@ let calculation = () => {
             <div class="cart-image">
             <img src="${image}" alt="">
             </div>
-            <i onclick="removeItem(${id})" class="fa-regular fa-circle-xmark"></i>
             <div class="cart-info">
+            <i onclick="removeItem(${id})" class="fa-regular fa-circle-xmark"></i>
             <p class="cart-product-name">${name}</p>
-            <p class="cart-recent-sold">Sold xxxx products</p>
             <p class="cart-product-prize">Rs ${price} /-</p>
             <div class="cart-product-quantity">
             <h2>PRICE:Rs ${item * price}/-</h2>
@@ -45,17 +42,19 @@ let calculation = () => {
             
             </div>
             `
-          }
+          
+          
         })
         .join(""));
       } else {
         //   ShoppingCart.innerHTML = "";
         cartProductDiv.innerHTML = `
-        <h2>Cart is Empty</h2>
-        <a href="index.html">
+        <h2 id="empty">Cart is Empty</h2>
+        <a href="/">
         <button class="HomeBtn">Back to Home</button>
         </a>
         `;
+        cartSummary.classList.add("removeCartSummary");
       }
     };
     generateCartItems();
@@ -112,67 +111,28 @@ let calculation = () => {
       basket = basket.filter((x) => x.id !== selectedItem.id);
       calculation();
       generateCartItems();
-      calculateTotalPrice();
+      TotalAmount();
       localStorage.setItem("data", JSON.stringify(basket));
     };
     
 
-    // let TotalAmount = () => {
-    //   if (basket.length !== 0) {
-    //     let amount = basket
-    //       .map((x) => {
-    //         let { id, item } = x;
-    //         for(i=0;i<totalItems.length;i++){
-    //           let filterData = totalItems[i].find((x) => x.id === id);
-    //           // return filterData[i].price * item;
-    //           console.log(filterData);
+    let TotalAmount = () => {
+      if (basket.length !== 0) {
+        let amount = basket
+          .map((x) => {
+            let { id, item } = x;
+              let filterData = fullMenuItems.find((x) => x.id === id);
+              return filterData.price * item;
+            
+          })
+          .reduce((x, y) => x + y, 0);
+          return document.querySelectorAll(".orderTotal").forEach(order =>{
+            order.innerHTML=amount;
+          });
+        } else return;
+      };
 
-    //         }
-    //       })
-    //       .reduce((x, y) => x + y, 0);
-    //       return document.querySelectorAll(".orderTotal").forEach(order =>{
-    //         order.innerHTML=amount;
-    //       });
-    //     } else return;
-    //   };
-
-
-    function calculateTotalPrice() {
-      let totalPrice = 0;
-  
-      // Iterate over each item in the basket
-      basket.forEach(itemId => {
-          // Find the item in each category of the database
-          let itemFound = null;
-  
-          // Check in the cartItems category
-          itemFound = completeItems.cartItems.find(item => item.id === itemId);
-          if (!itemFound) {
-              // Check in the fullMenu categories
-              itemFound = [...completeItems.fullMenuPizza, ...completeItems.fullMenuBurger, 
-                           ...completeItems.fullMenuSandwich, ...completeItems.fullMenuRolls,
-                           ...completeItems.fullMenuStarters, ...completeItems.fullMenuWraps,
-                           ...completeItems.fullMenuSLS, ...completeItems.fullMenuDrinks]
-                           .find(item => item.id === itemId);
-          }
-  
-          // If the item is found, add its price to the total
-          if (itemFound) {
-              totalPrice += itemFound.price;
-          }
-      });
-  
-      return document.querySelectorAll(".orderTotal").forEach(order =>{order.innerHTML=totalPrice;})
-  }
-  
-  // const total = calculateTotalPrice(basket);
-  // console.log("Total Price:", total);
-
-
-
-
-      
-      // TotalAmount();
+    TotalAmount();
 
       let clearCart = () => {
         basket = [];

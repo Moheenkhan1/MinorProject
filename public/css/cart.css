@@ -186,18 +186,36 @@ li a {
     margin-left: 18rem;
     overflow: scroll;
 }
+#empty{
+    font-size: 5rem;
+    font-weight: 400;
+    margin-top: 5rem;
+    margin-left: 20rem;
+}
 .main-cart-box::-webkit-scrollbar{
     display: none;
 }
 .cart-box{
+    height: 18rem;
     display: flex;
     flex-direction: row;
     margin: 0.8rem;
     padding: 0.4rem 0rem 0.8rem 0rem;
     border-bottom: 0.1rem solid black;
 }
+.cart-info i{
+    margin-left: 42rem;
+    font-size: 1.5rem;
+    
+}
+.cart-image{
+    width: 30%;
+    height: 90%;
+}
 .cart-image img{
-    width: 80%;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
     margin-top: 1rem;
     margin-left: 2rem;
 }
@@ -219,8 +237,8 @@ li a {
 }
 .cart-product-name{
     margin-top: 2.2rem;
-    font-size: 1rem;
-    margin-left: 0.8rem ;
+    font-size: 2.5rem;
+    margin-right: 5rem;
 
 }
 .cart-recent-sold{
@@ -233,14 +251,20 @@ li a {
 }
 .cart-product-prize{
     margin-top: 1rem;
-    font-size: 1rem;
-    margin-left: 0.8rem;
+    font-size: 1.5rem;
+    margin-right: 25rem;
+    color: #FF0000;
+    font-weight: bolder;
 }
 .cart-product-quantity{
     display: flex;
     align-items: center;
     justify-content:space-between;
     margin-right: 2rem;
+}
+.cart-product-quantity h2{
+    margin-left: 17rem;
+    margin-top: 5.5rem;
 }
 .cart-product-quantity i{
     padding: 0.5rem;
@@ -259,6 +283,15 @@ li a {
         width: 25vw;
         margin-top: 2rem
     
+}
+#clearCart{
+    padding: 0.5rem;
+    background-color: #FF0000;
+    border: none;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    color: white;
+
 }
 .product-summary{
     display: flex;
@@ -304,9 +337,23 @@ li a {
     width: 100%;
 }
 .quantity-buttons{
+    margin-top: 4rem;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
-
+.HomeBtn{
+    background-color: #FF0000;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    color: white;
+    margin-top: 4rem;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-left: 20rem;
+}
+.removeCartSummary{
+    display: none;
+}
 

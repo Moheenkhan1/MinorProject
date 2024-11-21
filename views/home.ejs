@@ -16,13 +16,7 @@
     <!--navbar-->
 
 <div class="nav">
-    <nav class="loc-bar">
-        <div class="location">
-            <i class="fas fa-map-marker-alt"></i>
-        </div>
-        <span>Nearby location of local stores</span>
-        <button class="loc-btn">Set location</button>
-    </nav>
+   
     <div class="line"></div>
     <nav class="nav-bar">
         <div class="nav-div">
@@ -130,16 +124,16 @@
     
 
     <div class="categories">
-        <div class="list pizza"><a href="/fullmenu/#pizzass"><h2>PIZZA</h2></a></div>
-        <div class="list burger"><a href="/fullmenu/#burgers"><h2>BURGER</h2></a></div>
-        <div class="list sandwich"><a href="/fullmenu/#sandwiches"><h2>SANDWICH</h2></a></div>
-        <div class="list wraps"><a href="/fullmenu/#wrrapps"><h2>WRAPS</h2></a></div>
+        <div class="list pizza"><a href="/fullmenu/#pizza"><h2>PIZZA</h2></a></div>
+        <div class="list burger"><a href="/fullmenu/#burger"><h2>BURGER</h2></a></div>
+        <div class="list sandwich"><a href="/fullmenu/#sandwich"><h2>SANDWICH</h2></a></div>
+        <div class="list wraps"><a href="/fullmenu/#wrap"><h2>WRAPS</h2></a></div>
     </div>
 
     <div class="categories">
-        <div class="list rolls"><a href="/fullmenu/#rollss"><h2>ROLLS</h2></a></div>
-        <div class="list starters"><a href="/fullmenu/#startersss"><h2>STARTERS</h2></a></div>
-        <div class="list clubsandwich"><a href="/fullmenu/#drinkss"><h2>SHAKES</h2></a></div>
+        <div class="list rolls"><a href="/fullmenu/#roll"><h2>ROLLS</h2></a></div>
+        <div class="list starters"><a href="/fullmenu/#starter"><h2>STARTERS</h2></a></div>
+        <div class="list clubsandwich"><a href="/fullmenu/#drink"><h2>SHAKES</h2></a></div>
         <div class="list fullmenu"> <a href="/fullmenu">ARABIAN MENU</a></div>
     </div>
 
@@ -149,7 +143,21 @@
     <div class="scroll-menu">
       <img src="/back.png" id="backBtn">
         <div class="scroll-items js-scroll-items" id="scrollItems">
-            <!-- items here are generated through js -->
+            <div id=product-id class="square">
+                <div class="square-img">
+                    <img src="">
+                </div>
+            <h2 class="square-heading">${name}</h2>
+                <p class="price-combo">Rs: ${price}/- </p>
+            <button class="square-button">Add To Cart</button>
+            <div class="quantityButtons">
+            <i class="fa-solid fa-minus downQ"></i>
+            <div class="quantity">${
+                search.item === undefined ? 0 : search.item
+              }</div>
+            <i class="fa-solid fa-plus upQ"></i>
+            </div>
+            </div>
         </div>
         <img src="/next.png" id="nextBtn">
     
