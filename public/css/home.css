@@ -698,5 +698,15 @@ li a {
     .aboutArabian{
         width: 17rem;
     }
+    .btn button{
+        height: 5rem;
+        width: 15rem;
+        font-weight: bolder;
+        font-size: 2rem;
+    }
+    .btn{
+        margin-right: 8rem;
+        
+    }
     
 }

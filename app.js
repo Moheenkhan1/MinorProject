@@ -1,7 +1,9 @@
 const express = require("express");
+const { request } = require("http");
 let app = express();
 const mongoose = require("mongoose");
 const path = require("path");
+// const fullMenuItems = require("/data/data.js");
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
@@ -28,6 +30,16 @@ app.get("/fullmenu",(req,res)=>{
     res.render("fullmenu");
 })
 
-app.listen("3000",()=>{
-    console.log("App is listening to port 3000");
+app.get("/admin",(req,res)=>{
+    res.render("admin");
+})
+
+app.delete("/admin/delete/:id",(res,req)=>{
+  let { id}= req.params;
+  let adminitem = fullMenuItems.find((p)=> id === p.id);
+  res.send("delete successful", {fullMenuItems});
+})
+
+app.listen("8080",()=>{
+    console.log("App is listening to port 8080");
 })

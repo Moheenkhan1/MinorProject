@@ -339,7 +339,18 @@ li a {
     margin-left: 2rem;
 }
 
-
+@media only screen and (max-width: 460px) {
+   .nav-bar{
+    width: 100vw;
+    height: 7rem;
+   }
+   .logo{
+    position: absolute;
+    top: 2.2rem;
+    left: 2rem;
+    font-size: 3rem;
+   }
+}
 
 
 

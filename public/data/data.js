@@ -56,3 +56,5 @@ const fullMenuItems =[
        category:"drink"
    }
 ];
+
+// module.exports = {fullMenuItems};
