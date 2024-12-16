@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signuplogin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Permanent+Marker&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="form-container">
+        <div class="login">
+            <form action="/login" method="post">
+                <h2 class="login-heading">LOGIN</h2>
+                <div class="phonediv">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <input type="text" name="username" class="phone" placeholder="Enter Your username" required>
+                </div>
+                <div class="pass-div">
+                    <i class="fa-solid fa-key"></i>
+                    <input type="password" name="password" class="password" placeholder="Enter Password">
+                </div>
+                <button class="login-buttonn">Login Now</button>
+                <div class="dont-have-account">
+                    <p class="dont log-sign" onclick="location.href='/signup';">Don't have an accounty.? SIGN-UP</p>
+
+                </div>
+            </form>
+        </div>
+     </div>
+</body>
+</html>

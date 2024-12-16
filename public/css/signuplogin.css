@@ -1,0 +1,149 @@
+/* login signup page */
+
+.cross{
+    font-size: 30px;
+    margin-left: 34rem;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.form-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 30rem;
+    width: 40rem;
+    z-index: 1000;
+    background-color: #ffffff;
+    border: solid 2px rgb(0, 0, 0);
+    border-radius: 1.5rem;
+    box-shadow: 1px 1px 10px 10px rgb(136, 135, 135);
+}
+
+.login-heading{
+    color: #FF0000;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+.phonediv{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 2rem;
+    width: 50%;
+    margin-top: 3rem;
+    margin-left: 9rem;
+    border-bottom: solid 0.5px black;
+}
+.phone{
+    cursor: pointer;
+    height: 2rem;
+    width: 70%;
+    border: none;
+}
+.pass-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 2rem;
+    width: 50%;
+    margin-top: 3rem;
+    margin-left: 9rem;
+    border-bottom: solid 0.5px black;
+}
+.password{
+    height: 2rem;
+    width: 70%;
+    border: none;
+    cursor: pointer;
+}
+.forgot{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    margin-top: 2rem;
+    margin-left: 7rem;
+}
+.login-buttonn{
+    height: 3rem;
+    width: 10rem;
+    color: white;
+    font-size: 20px;
+    display: block;
+    margin-top: 2rem;
+    margin-left: 14rem;
+    background-color: #E4002B;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: #db8494e8 1px 1px 2px 2px;
+}
+.dont-have-account{
+    height: 4rem;
+    margin-top: 1rem;
+    margin-left: 11rem;
+}
+
+/* signup */
+
+.form-container2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 30rem;
+    width: 40rem;
+    z-index: 1000;
+    background-color: #ffffff;
+    border: solid 2px rgb(0, 0, 0);
+    border-radius: 1.5rem;
+    box-shadow: 1px 1px 10px 10px rgb(136, 135, 135);
+}
+
+.cross2{
+    font-size: 30px;
+    margin-left: 34rem;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+.signup-heading{
+    color: #FF0000;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 0rem;
+}
+.confirm-pass{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 2rem;
+    width: 50%;
+    margin-top: 3rem;
+    margin-left: 9rem;
+    border-bottom: solid 0.5px black;
+}
+.Signup-buttonn{
+    height: 3rem;
+    width: 10rem;
+    color: white;
+    font-size: 20px;
+    display: block;
+    margin-top: 1.5rem;
+    margin-left: 14rem;
+    background-color: #E4002B;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: #db8494e8 1px 1px 2px 2px;
+}
+.already-have-account{
+    height: 4rem;
+    margin-top: 1rem;
+    margin-left: 11rem;
+}
+.log-sign{
+    color: rgb(89, 89, 216);
+    cursor: pointer;
+}
+

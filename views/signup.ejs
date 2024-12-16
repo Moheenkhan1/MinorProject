@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signuplogin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Permanent+Marker&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="form-container2">
+    <%= successMsg %>
+    <%= failureMsg %>
+        <div class="signup-div">
+            <form action="/signup" method="post">
+                <h2 class="signup-heading">SIGN UP</h2>
+                <div class="phonediv">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <input type="text" name="email" class="phone" placeholder="Enter Your email">
+                </div>
+                <div class="confirm-pass">
+                    <i class="fa-solid fa-key"></i>
+                    <input type="text" name="username" class="password" placeholder="username">
+                </div>
+                <div class="pass-div">
+                    <i class="fa-solid fa-key"></i>
+                    <input type="password" name="password" class="password" placeholder="Enter Password">
+                </div>
+                
+                </div>
+                <button class="Signup-buttonn">SignUp Now</button>
+                <div class="already-have-account">
+                    <p class="alreadyyy log-sign" onclick="location.href='/signup';">Already have an accounty.? LOGIN</p>
+
+                </div>
+            </form>
+        </div>
+     </div>
+     </body>
+     </html>

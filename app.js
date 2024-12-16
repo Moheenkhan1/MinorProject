@@ -3,7 +3,30 @@ const { request } = require("http");
 let app = express();
 const mongoose = require("mongoose");
 const path = require("path");
-// const fullMenuItems = require("/data/data.js");
+const session=require("express-session");
+const flash=require("connect-flash");
+const passport=require("passport");
+const LocalStrategy=require("passport-local");
+const User=require("./models/user.js");
+const wrapAsync =require("./utils/wrapAsync.js");
+const ExpressError=require("./utils/ExpressError.js");
+const ejsMate=require("ejs-mate");
+
+const userRouter=require("./routes/user.js");
+
+// Define sessionOptions object
+const sessionOptions = {
+    secret: "mysecret", 
+    resave: false,      
+    saveUninitialized: false, 
+    cookie: {
+        secure: false, 
+        maxAge: 24 * 60 * 60 * 1000 
+    }
+};
+
+mongoose.connect("mongodb://localhost:27017");  
+
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
@@ -18,9 +41,27 @@ app.use(express.static(path.join(__dirname,"/public/data")));
 app.set("view engine","ejs");
 app.set("views", path.join(__dirname,"/views"));
 
+app.engine('ejs',ejsMate);
+
+
+app.use(session(sessionOptions));
+app.use(flash());
+
 app.get("/", (req,res)=>{
+    res.locals.successMsg = req.flash("success");
+    res.locals.failureMsg = req.flash("failure");
     res.render("home");
 })
+app.use("/",userRouter);
+
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.get("/cart",(req,res)=>{
     res.render("cart");
@@ -28,16 +69,6 @@ app.get("/cart",(req,res)=>{
 
 app.get("/fullmenu",(req,res)=>{
     res.render("fullmenu");
-})
-
-app.get("/admin",(req,res)=>{
-    res.render("admin");
-})
-
-app.delete("/admin/delete/:id",(res,req)=>{
-  let { id}= req.params;
-  let adminitem = fullMenuItems.find((p)=> id === p.id);
-  res.send("delete successful", {fullMenuItems});
 })
 
 app.listen("8080",()=>{
