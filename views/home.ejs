@@ -34,8 +34,12 @@
                 <div class="dropdown">
                     <i class="fas fa-user"></i>
                     <div class="btn">
+                        <% if(!currUser) {%>
                        <button class="signupA" onclick="location.href='/signup';">Sign up</button>
                        <button class="loginA" onclick="location.href='/login';">Log in</button>
+                       <% } else {%>
+                       <button class="logoutA" onclick="location.href='/logout';">Log Out</button>
+                       <% } %>
                     </div>
                 </div>
                 <div class="cart">

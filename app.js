@@ -11,6 +11,7 @@ const User=require("./models/user.js");
 const wrapAsync =require("./utils/wrapAsync.js");
 const ExpressError=require("./utils/ExpressError.js");
 const ejsMate=require("ejs-mate");
+const {isLoggedIn} = require("./middlewares.js"); 
 
 const userRouter=require("./routes/user.js");
 
@@ -47,12 +48,6 @@ app.engine('ejs',ejsMate);
 app.use(session(sessionOptions));
 app.use(flash());
 
-app.get("/", (req,res)=>{
-    res.locals.successMsg = req.flash("success");
-    res.locals.failureMsg = req.flash("failure");
-    res.render("home");
-})
-app.use("/",userRouter);
 
 
 
@@ -60,8 +55,21 @@ app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
 
+app.use("/",userRouter);
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
+app.get("/", (req,res)=>{
+    res.locals.successMsg = req.flash("success");
+    res.locals.failureMsg = req.flash("failure");
+    res.locals.currUser= req.user;
+    res.render("home");
+})
+app.use((req,res,next)=>{
+    res.locals.successMsg = req.flash("success");
+    res.locals.failureMsg = req.flash("failure");
+    next()
+})
 
 app.get("/cart",(req,res)=>{
     res.render("cart");
@@ -70,6 +78,12 @@ app.get("/cart",(req,res)=>{
 app.get("/fullmenu",(req,res)=>{
     res.render("fullmenu");
 })
+app.get("/payment",isLoggedIn,(req,res)=>{
+
+    res.render("payment");
+})
+
+
 
 app.listen("8080",()=>{
     console.log("App is listening to port 8080");
