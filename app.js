@@ -84,6 +84,11 @@ app.get("/cart",(req,res)=>{
 app.get("/fullmenu",(req,res)=>{
     res.render("fullmenu");
 })
+app.get("/payment-success", (req, res) => {
+    const { order_id, payment_id } = req.query;
+    res.render("payment-success", { order_id, payment_id });
+});
+
 
 app.post("/payment", async (req, res) => {
     const { amount } = req.body; // Ensure amount is provided and is a number

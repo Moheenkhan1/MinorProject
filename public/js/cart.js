@@ -177,9 +177,9 @@ let calculation = () => {
                 name: "Arabian",
                 description: "Test Transaction",
                 handler: function (response) {
-                    alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
-                    // Add your post-payment logic here
-                },
+                  window.location.href = `/payment-success?order_id=${response.razorpay_order_id}&payment_id=${response.razorpay_payment_id}`;
+              },
+              
                 prefill: {
                     name: "Customer Name",
                     email: "customer@example.com",
