@@ -4,6 +4,7 @@ let updateIncrement=document.getElementById("updationKeyIncrement");
 let updateDecrement=document.getElementById("updationKeysDecrement");
 
 
+
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
 let calculation = () => {
@@ -143,3 +144,57 @@ let calculation = () => {
       document.getElementById("clearCart").addEventListener("click",()=>{
         clearCart();
       })
+
+
+      document.getElementById('checkoutButton').addEventListener('click', async function () {
+        try {
+            // Dynamically fetch the total amount from the cart summary
+            const orderTotalElement = document.querySelector(".orderTotal");
+            const amount = parseInt(orderTotalElement.innerHTML) * 100; // Convert to paisa (₹500 -> 50000)
+    
+            if (isNaN(amount) || amount <= 0) {
+                alert("Invalid amount. Please check your cart.");
+                return;
+            }
+    
+            const response = await fetch('/payment', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ amount }), // Send the amount in paisa
+            });
+    
+            const data = await response.json();
+    
+            if (!response.ok) {
+                throw new Error(data.error || "Failed to create Razorpay order.");
+            }
+    
+            const options = {
+                key: "rzp_test_YFasd7SnuZcubY", // Razorpay Key ID
+                amount: data.amount,
+                currency: data.currency,
+                order_id: data.id,
+                name: "Arabian",
+                description: "Test Transaction",
+                handler: function (response) {
+                    alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+                    // Add your post-payment logic here
+                },
+                prefill: {
+                    name: "Customer Name",
+                    email: "customer@example.com",
+                    contact: "9999999999",
+                },
+                theme: {
+                    color: "#3399cc",
+                },
+            };
+    
+            const rzp = new Razorpay(options);
+            rzp.open();
+        } catch (error) {
+            console.error("Error initiating payment:", error);
+            alert("Failed to initiate payment. Please try again.");
+        }
+    });
+    
