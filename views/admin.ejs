@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <h1>Café Admin Dashboard</h1>
+    </header>
+    <main>
+        <section id="menu-management">
+            <h2>Menu Management</h2>
+            <button id="add-item">Add New Item</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="menu-table-body">
+                    <!-- Menu items will be dynamically loaded here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="user-management">
+            <h2>User Management</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="user-table-body">
+                    <!-- Users will be dynamically loaded here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="admin.js"></script>
+</body>
+</html>

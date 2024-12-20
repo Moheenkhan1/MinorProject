@@ -17,6 +17,12 @@ const Razorpay = require("razorpay");
 
 const userRouter=require("./routes/user.js");
 
+const adminRoutes = require('./routes/admin.js');
+
+// Use the admin routes
+app.use(adminRoutes);
+
+
 // Define sessionOptions object
 const sessionOptions = {
     secret: "mysecret", 
@@ -115,6 +121,7 @@ app.post("/payment", async (req, res) => {
         res.status(500).json({ error: "Failed to create Razorpay order. Check server logs for details." });
     }
 });
+
 
 app.listen("8080",()=>{
     console.log("App is listening to port 8080");

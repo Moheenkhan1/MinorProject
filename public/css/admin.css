@@ -1,295 +1,65 @@
-* {
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-html::-webkit-scrollbar {
-    display: none;
-}
+/* Admin Page Styles */
 
 body {
     font-family: Arial, sans-serif;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: #EEEEEE;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
-.container {
-    height: 100vh;
-    display: flex;
-}
-
-.sidebar {
-    height: 100%;
-    width: 20rem;
-    background-color: black;
-}
-
-.sidebar h1 {
-    margin-left: 1rem;
-    margin-top: 2rem;
+header {
+    background-color: #4CAF50;
     color: white;
+    padding: 1rem;
+    text-align: center;
 }
 
-.admin-options {
-    display: flex;
-    flex-direction: column;
-    margin-top: 5rem;
-}
-
-.admin-options a {
-    color: white;
-    padding: 2.5rem;
-    font-size: 1.2rem;
-}
-
-.admin-options a:hover {
-    color: white;
-    font-size: 1.5rem;
-    transition: 0.2s;
-}
-
-.admin-options i {
-    padding-right: 0.5rem;
-}
-
-.main-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    background-color: #FFFFFF;
-}
-
-.navbar {
-    height: 5rem;
-    background-color: black;
-    /*margin-left: 0.2rem;*/
-   /* margin-right: 0.2rem;*/
-    /*margin-top: 0.2rem;*/
-}
-
-.content {
-    flex-grow: 1;
+main {
     padding: 2rem;
-    overflow-y: auto;
-    background: linear-gradient(rgb(255, 0, 0), rgb(0, 0, 0));
-   /* margin-left: 0.2rem;
-    margin-right: 0.2rem;
-    margin-top: 0.2rem;*/
-
-
-
 }
 
-    /*Content*/
-.sidebar-dashboard-content{
-    background: linear-gradient(rgba(255, 0, 0, 0.361), rgba(0, 0, 0, 0.572));
-    height: 50rem;
-    display: none;
+h1, h2 {
+    margin-bottom: 1rem;
+}
+
+section {
+    margin-bottom: 2rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
     border: none;
-
-}
-.close-sidebar{
-    font-size: 3rem;
-    display: flex;
-    margin-left: 95rem;
-}
-.close-sidebar:hover{
-    cursor: pointer;
-}
-/*Dashboard*/
-.dashboard{
-    margin-left: 4rem;
-    margin-top: 6rem;
-    display: grid;
-    grid-template-columns: auto auto auto
-}
-.dashboard-content{
-    background: linear-gradient(rgba(255, 0, 0, 0.361), rgba(0, 0, 0, 0.572));
-    height: 10rem;
-    width: 20rem;
-    border-radius: 2rem;
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid black;
-
-}
-.dashboard-content:hover{
-    border-radius: 3rem;
-   transition: 0.5s;
-   background: linear-gradient(rgba(25, 1, 1, 0.361), rgba(0, 0, 0, 0.572));
-}
-.dashboard-information{
-    color: white;
-    margin-top: 2.5rem;
-    margin-left: 2rem;
-}
-.dashboard-information h1{
-    margin-left: 1.3rem;
-    margin-bottom: 0.5rem;
-}
-.dashboard-icon{
-    color: white;
-    margin-top: 2.5rem;
-    margin-right: 2rem;
-    font-size: 4rem;
-}
-
-
-
-
-/*PRODCUTS*/
-
-
-.sidebar-product-content{
-    background: linear-gradient(rgba(255, 0, 0, 0.361), rgba(0, 0, 0, 0.572));
-    height: 50rem;
-    display: none;
-    border: none;
-
-}
-.close-sidebar2{
-    font-size: 3rem;
-    display: flex;
-    margin-left: 95rem;
-}
-.close-sidebar2:hover{
-    cursor: pointer;
-}
-.sidebar-product{
-    background: linear-gradient(rgba(0, 0, 0, 0.361), rgba(0, 0, 0, 0.572));
-    height: 5rem;
-    width: 80%;
-    margin-left: 2rem;
-    margin-top: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid black;
-    border-radius: 1rem;
-}
-.sidebar-product-image img{
-    height: 4rem;
-    margin: 1rem;
-    border-radius: 1rem;
-}
-.sidebar-product-name{
-    font-size: 0.8rem;
-    margin-right: 8rem;
-    color: white;
-    
-}
-.sidebar-product-prize{
-    font-size: 1.5rem;
-    color: white;
-}
-.sidebar-product-button button{
-    padding: 0.8rem;
-    margin-right:1rem;
-    background-color: rgba(85, 12, 12, 0.48);
-    color: white;
-    border: 1px solid black;
-    border-radius: 0.8rem;
-    font-size: 0.8rem;
-}
-.sidebar-product-button button:hover{
-    cursor: pointer;
-}
-/*REPORT*/
-
-.sidebar-report-content{
-    background: linear-gradient(rgba(255, 0, 0, 0.361), rgba(0, 0, 0, 0.572));
-    height: 50rem;
-    display: none;
-    border: none;
-
-}
-.close-sidebar3{
-    font-size: 3rem;
-    display: flex;
-    margin-left: 95rem;
-}
-.close-sidebar3:hover{
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
     cursor: pointer;
 }
 
-/* Inventory Section */
-.sidebar-inventory-content {
-    background: linear-gradient(rgba(255, 0, 0, 0.361), rgba(0, 0, 0, 0.572));
-    height: 50rem;
-    display: none;
-    border: none;
+button:hover {
+    background-color: #45a049;
 }
 
-.close-sidebar4 {
-    font-size: 3rem;
-    display: flex;
-    margin-left: 95rem;
-}
-
-.close-sidebar4:hover {
-    cursor: pointer;
-}
-
-.inventory-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 2rem;
-}
-
-.sidebar-product {
-    background: linear-gradient(rgba(0, 0, 0, 0.361), rgba(0, 0, 0, 0.572));
-    height: 12rem;
-    width: 18rem;
-    margin: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid black;
-    border-radius: 1rem;
-}
-
-.sidebar-product-image img {
-    height: 8rem;
+table {
     width: 100%;
-    border-radius: 1rem;
+    border-collapse: collapse;
+    margin-top: 1rem;
 }
 
-.sidebar-product-name {
-    font-size: 1rem;
-    color: white;
-    margin: 1rem;
+table th, table td {
+    padding: 0.5rem;
+    text-align: left;
+    border: 1px solid #ddd;
 }
 
-.sidebar-product-prize {
-    font-size: 1.2rem;
-    color: white;
-    margin: 1rem;
+table th {
+    background-color: #f2f2f2;
 }
 
-.sidebar-product-button button {
-    padding: 0.8rem;
-    background-color: rgba(85, 12, 12, 0.48);
-    color: white;
-    border: 1px solid black;
-    border-radius: 0.8rem;
-    font-size: 1rem;
-    margin: 1rem;
+#menu-management button {
+    margin-bottom: 1rem;
 }
-
-.sidebar-product-button button:hover {
-    cursor: pointer;
-}
-
-
-
-
-
