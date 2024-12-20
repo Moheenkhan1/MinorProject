@@ -461,4 +461,4 @@ const fullMenuItems =[
    
 ];
 
-// module.exports = {fullMenuItems};
+module.exports = fullMenuItems;
